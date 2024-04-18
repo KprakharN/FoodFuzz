@@ -68,7 +68,7 @@
                 <button class="submitB">Search</button>
                 <!--<p id="searchResult" style="margin-left: 60px; margin-top: 10px;"></p> Paragraph to display search result -->
             </form>
-            <div class="result">
+            <div class="result hide">
                 Your result will appear here!
             </div>
             <div class="noResult hide">
@@ -168,109 +168,115 @@
     </footer>
 
     <script>
+
+                    // search button 
+
         document.addEventListener("DOMContentLoaded", function() {
-            // Get a reference to the navigation menu
+            let searchButton = document.querySelector('.submitB');
+            let resultParagraph = document.querySelector('.result');
+            let noResultParagraph = document.querySelector('.noResult');
+            searchButton.addEventListener('click', function() {
+                resultParagraph.classList.remove('hide');
+                if (!noResultParagraph.classList.contains('hide')) {
+                    noResultParagraph.classList.add('hide');
+                }
+            });
+        });
+
+                    // navigation menu
+
+        document.addEventListener("DOMContentLoaded", function() {
             let navigationMenu = document.querySelector('.navigation__menu');
-        
-            // Get a reference to the element that triggers the display of the navigation menu
             let menuToggleButton = document.querySelector('.userImg');
-        
-            // Add an event listener to the menu toggle button
             menuToggleButton.addEventListener('click', function() {
-                // Toggle the 'none' class on the navigation menu to show/hide it
                 navigationMenu.classList.toggle('none');            
             });
-        });
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            let menu = document.querySelector('.navigation__menu');
-            let avatarProfile = document.querySelector('.avatar-profile');
-        
-            // Function to close the menu
-            function closeMenu() {
-                menu.classList.add('hide');
-            }
-        
-            // Event listener to close the menu when clicking outside of it
-            document.addEventListener('click', function(event) {
-                let isClickInsideMenu = menu.contains(event.target);
-                let isClickOnAvatarProfile = avatarProfile.contains(event.target);
-                
-                if (!isClickInsideMenu && !isClickOnAvatarProfile) {
-                    closeMenu();
-                }
-            });
-        
-            // Event listener to toggle menu visibility when avatar profile is clicked
-            avatarProfile.addEventListener('click', () => {
-                menu.classList.toggle('hide');
-            });
-        
-            // Toggle forms based on radio button selection
-            let option1 = document.getElementById('option1');
-            let option2 = document.getElementById('option2');
-            let formOption1 = document.getElementById('formOption1');
-            let formOption2 = document.getElementById('formOption2');
-        
-            option1.addEventListener('change', function() {
-                if (option1.checked) {
-                    formOption1.style.display = 'block';
-                    formOption2.style.display = 'none';
-                }
-            });
-        
-            option2.addEventListener('change', function() {
-                if (option2.checked) {
-                    formOption1.style.display = 'none';
-                    formOption2.style.display = 'block';
-                }
-            });
-        });
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchForm = document.getElementById("formOption1");
-            const searchResult = document.getElementById("searchResult");
-            const noResult = document.getElementById("noResult");
-            const submitButton = document.querySelector(".submitB");
-          
-            submitButton.addEventListener("click", function() {
-              const ingredient1 = document.getElementById("ingredient1").value.trim();
-              const ingredient2 = document.getElementById("ingredient2").value.trim();
-          
-              if (ingredient1 === "" && ingredient2 === "") {
-                searchResult.classList.add("hide");
-                noResult.classList.remove("hide");
-              } else {
-                searchResult.classList.remove("hide");
-                noResult.classList.add("hide");
-          
-                // Simulated search result display (replace with actual logic)
-                const searchText = `Search results for "${ingredient1}" and "${ingredient2}":`;
-                searchResult.textContent = searchText;
-              }
-            });
-        });
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get references to the radio buttons and form labels
-            const option1 = document.getElementById("option1");
-            const option2 = document.getElementById("option2");
-            const ingredient1Label = document.getElementById("ingredient1Label");
-            const ingredient2Label = document.getElementById("ingredient2Label");
-            
-            // Add event listeners to the radio buttons
-            option1.addEventListener("change", function() {
-                // If "Search by Ingredient" is selected, update the form labels
-                ingredient1Label.textContent = "Ingredient 1:";
-                ingredient2Label.textContent = "Ingredient 2:";
-            });
-            
-            option2.addEventListener("change", function() {
-                // If "Search by Dish" is selected, update the form labels
-                ingredient1Label.textContent = "Dish:";
-                ingredient2Label.textContent = "Additional Detail (Optional):";
-            });
-        });
+        });        
+
+                    // 
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let searchButton = document.querySelector('.submitB');
+                        let resultParagraph = document.querySelector('.result');
+                        let noResultParagraph = document.querySelector('.noResult');
+                        let ingredient1Input = document.getElementById('ingredient1');
+                        let ingredient2Input = document.getElementById('ingredient2');
+                    
+                        searchButton.addEventListener('click', function(event) {
+                            event.preventDefault(); 
+                            if (!ingredient1Input.value.trim() && !ingredient2Input.value.trim()) {
+                                noResultParagraph.classList.remove('hide');
+                                resultParagraph.classList.add('hide');
+                            } else {
+                                resultParagraph.classList.remove('hide');
+                                noResultParagraph.classList.add('hide');
+                            }
+                        });
+                    });
+
+
+
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let option1Radio = document.getElementById('option1');
+                        let option2Radio = document.getElementById('option2');
+                        let ingredient1Label = document.querySelector('label[for="ingredient1"]');
+                        let ingredient2Label = document.querySelector('label[for="ingredient2"]');
+                        function updateLabelsForDishSearch() {
+                            ingredient1Label.textContent = 'Recipe Name:';
+                            ingredient2Label.textContent = 'Recipe Category:';
+                        }          
+                        function updateLabelsForIngredientSearch() {
+                            ingredient1Label.textContent = 'Ingredient 1:';
+                            ingredient2Label.textContent = 'Ingredient 2:';
+                        }
+                        updateLabelsForIngredientSearch();
+                        option1Radio.addEventListener('change', function() {
+                            if (option1Radio.checked) {
+                                updateLabelsForIngredientSearch();
+                            }
+                        });
+                        option2Radio.addEventListener('change', function() {
+                            if (option2Radio.checked) {
+                                updateLabelsForDishSearch();
+                            }
+                        });
+                    });
+                    document.addEventListener("DOMContentLoaded", function() {
+                        let option1Radio = document.getElementById('option1');
+                        let option2Radio = document.getElementById('option2');
+                        let ingredient1Input = document.getElementById('ingredient1');
+                        let ingredient2Input = document.getElementById('ingredient2');
+                        let searchButton = document.querySelector('.submitB');
+                        let resultParagraph = document.querySelector('.result');
+                        let noResultParagraph = document.querySelector('.noResult');
+                        function clearFieldsAndHideResults() {
+                            ingredient1Input.value = '';
+                            ingredient2Input.value = '';
+                            resultParagraph.classList.add('hide');
+                            noResultParagraph.classList.add('hide');
+                        }
+                        clearFieldsAndHideResults();
+                        option1Radio.addEventListener('change', function() {
+                            if (option1Radio.checked) {
+                                clearFieldsAndHideResults();
+                            }
+                        });
+                        option2Radio.addEventListener('change', function() {
+                            if (option2Radio.checked) {
+                                clearFieldsAndHideResults();
+                            }
+                        });
+                        searchButton.addEventListener('click', function(event) {
+                            event.preventDefault(); 
+                            if (!ingredient1Input.value.trim() && !ingredient2Input.value.trim()) {
+                                noResultParagraph.classList.remove('hide');
+                                resultParagraph.classList.add('hide');
+                            } else {
+                                resultParagraph.classList.remove('hide');
+                                noResultParagraph.classList.add('hide');
+                            }
+                        });
+                    });
+                    
     </script>
 </body>
 </html>

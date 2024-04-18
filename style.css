@@ -369,7 +369,7 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-.submitFb{
+.submitB {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -378,9 +378,10 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.searchFb:hover {
+.submitB:hover {
     background-color: #45a049;
 }
+
 
 .result {
     margin-left: 280px; /* Adjust as needed */
@@ -395,7 +396,7 @@ input[type="text"] {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .trending {
