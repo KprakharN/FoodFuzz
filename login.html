@@ -1,0 +1,91 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodFuzz</title>
+        <link rel="stylesheet" href="logincss.css">
+        <!-- <link rel="shortcut icon" href="logo.webp" type="image/x-icon"> -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <img src="logo.png" alt="Your Logo" class="logo">
+                <h1>Welcome Back!</h1>
+            </header>
+            <main class="main">
+                <form action="#" method="post">
+                    <div class="login-box">
+                        <div class="email-box">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="password-box">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" id="toggleButton" class="toggle-button" onclick="togglePasswordVisibility()">Show</button>
+                        </div>                                        
+                        <div class="checkbox-forgot-password">
+                            <div class="checkbox-box">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember Me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+                        <div class="line-login-option">
+                            <div class="login-option-social-media">Or Login With</div>
+                        </div>
+                            <div class="logo-both">
+                                <a href="https://www.facebook.com/login" target="_blank" class="social-button facebook">
+                                    <img src="facebookLogo.png" alt="Facebook" height="30px" width="30px">
+                                </a>                    
+                                <a href="https://accounts.google.com/Login" target="_blank" class="social-button google">
+                                    <img src="googleLogo.png" alt="Google" height="30px" width="30px">
+                                </a>
+                            </div>
+                        <button type="submit" class="login-button" id="loginButton"><a href ="index.html">Login</a></button>
+                    </div>
+                </form>
+            </main>
+        </div>
+        <br>
+        <br>
+        <br>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Explore</a>
+                <a href="#">Help & Feedback</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 FoodFuzz
+            </div>
+        </footer>
+        <script>
+            document.getElementById('loginButton').addEventListener('click', function() {
+                // Get the email and password values
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                // Check if the email and password match the provided credentials
+                if (email === 'testmail123@gmail.com' && password === 'password123') {
+                    // Redirect to the homepage
+                    window.location.href = 'index.html';
+                } else {
+                    // Display an error message (you can customize this part)
+                    alert('Invalid email or password. Please try again.');
+                }
+            });
+            document.getElementById('toggleButton').addEventListener('click', function() {
+                var passwordField = document.getElementById('password');
+                var toggleButton = document.getElementById('toggleButton');
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    toggleButton.textContent = 'Hide';
+                } else {
+                    passwordField.type = 'password';
+                    toggleButton.textContent = 'Show';
+                }
+            });        
+        </script>    
+    </body>
+    </html>

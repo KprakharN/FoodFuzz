@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Foodfuzz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="logo.png" alt="logo" height="60" width="130">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Recepie</a>
+                        <div class="dropdown-content">
+                            <a href="#">Breakfast</a>
+                            <a href="#">Lunch</a>
+                            <a href="#">Dinner</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="#">Blog</a></li> -->
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <img class="userImg" src="user-img.avif" alt="Description of the image" height="50" width="50">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="navigation__menu none">
+        <ul class="navigation__menu__items">
+            <li>Your Account</li>
+            <li>Notifications</li>
+            <li>Recipe Collection</li>
+            <!-- <li>Your blogs</li> -->
+            <li>Setting</li>
+            <li class="separator"><hr></li>
+            <!-- <li class="logout"></li> -->
+            <li class="logout"><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+    
+    <main>
+        <div class="search-place">
+            <h2 style="text-align:centre;margin-left:270px;">Search for the Recipe</h2>
+            <div class="toggle-container">
+                <label class="toggle-label" for="option1">Search by Ingredient</label>
+                <label class="toggle-switch">
+                    <input type="radio" id="option1" name="toggleOption" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <label class="toggle-label" for="option2">Search by Dish</label>
+                <label class="toggle-switch">
+                    <input type="radio" id="option2" name="toggleOption">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+    
+            <form id="formOption1" style="display:block;">
+                <!-- Form for Option 1 -->
+                <label for="ingredient1">Ingredient 1:</label><br>
+                <input type="text" id="ingredient1" name="ingredient1"><br>
+                <label for="ingredient2">Ingredient 2:</label><br>
+                <input type="text" id="ingredient2" name="ingredient2"><br>
+                <button class="submitB">Search</button>
+                <!--<p id="searchResult" style="margin-left: 60px; margin-top: 10px;"></p> Paragraph to display search result -->
+            </form>
+            <div class="result">
+                Your result will appear here!
+            </div>
+            <div class="noResult hide">
+                Please Enter Ingredient!
+            </div>
+        </div>
+        
+        <div class="img-container">
+            <img src="home-image.png" alt="Description of the image" height="500" width="500">
+        </div>
+        
+    </main>
+    
+
+    <div class="trending">
+    <h2>Trending Foods</h2>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 1">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 2">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 3">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 4">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 5">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cholebathura.avif" alt="Dish 6">
+            <div class="content">
+                <h3>Chole Bhature</h3>
+                <p>Chole bhature is a food dish popular in the northern areas of 
+                    the Indian subcontinent. It is a combination of chana masala 
+                    and bhatura/puri, a deep-fried bread made from maida. Chole
+                    bhature is often eaten as a breakfast dish, sometimes 
+                    accompanied with lassi.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Explore</a>
+            <a href="#">Help & Feedback</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 FoodFuzz
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get a reference to the navigation menu
+            let navigationMenu = document.querySelector('.navigation__menu');
+        
+            // Get a reference to the element that triggers the display of the navigation menu
+            let menuToggleButton = document.querySelector('.userImg');
+        
+            // Add an event listener to the menu toggle button
+            menuToggleButton.addEventListener('click', function() {
+                // Toggle the 'none' class on the navigation menu to show/hide it
+                navigationMenu.classList.toggle('none');            
+            });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            let menu = document.querySelector('.navigation__menu');
+            let avatarProfile = document.querySelector('.avatar-profile');
+        
+            // Function to close the menu
+            function closeMenu() {
+                menu.classList.add('hide');
+            }
+        
+            // Event listener to close the menu when clicking outside of it
+            document.addEventListener('click', function(event) {
+                let isClickInsideMenu = menu.contains(event.target);
+                let isClickOnAvatarProfile = avatarProfile.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnAvatarProfile) {
+                    closeMenu();
+                }
+            });
+        
+            // Event listener to toggle menu visibility when avatar profile is clicked
+            avatarProfile.addEventListener('click', () => {
+                menu.classList.toggle('hide');
+            });
+        
+            // Toggle forms based on radio button selection
+            let option1 = document.getElementById('option1');
+            let option2 = document.getElementById('option2');
+            let formOption1 = document.getElementById('formOption1');
+            let formOption2 = document.getElementById('formOption2');
+        
+            option1.addEventListener('change', function() {
+                if (option1.checked) {
+                    formOption1.style.display = 'block';
+                    formOption2.style.display = 'none';
+                }
+            });
+        
+            option2.addEventListener('change', function() {
+                if (option2.checked) {
+                    formOption1.style.display = 'none';
+                    formOption2.style.display = 'block';
+                }
+            });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchForm = document.getElementById("formOption1");
+            const searchResult = document.getElementById("searchResult");
+            const noResult = document.getElementById("noResult");
+            const submitButton = document.querySelector(".submitB");
+          
+            submitButton.addEventListener("click", function() {
+              const ingredient1 = document.getElementById("ingredient1").value.trim();
+              const ingredient2 = document.getElementById("ingredient2").value.trim();
+          
+              if (ingredient1 === "" && ingredient2 === "") {
+                searchResult.classList.add("hide");
+                noResult.classList.remove("hide");
+              } else {
+                searchResult.classList.remove("hide");
+                noResult.classList.add("hide");
+          
+                // Simulated search result display (replace with actual logic)
+                const searchText = `Search results for "${ingredient1}" and "${ingredient2}":`;
+                searchResult.textContent = searchText;
+              }
+            });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get references to the radio buttons and form labels
+            const option1 = document.getElementById("option1");
+            const option2 = document.getElementById("option2");
+            const ingredient1Label = document.getElementById("ingredient1Label");
+            const ingredient2Label = document.getElementById("ingredient2Label");
+            
+            // Add event listeners to the radio buttons
+            option1.addEventListener("change", function() {
+                // If "Search by Ingredient" is selected, update the form labels
+                ingredient1Label.textContent = "Ingredient 1:";
+                ingredient2Label.textContent = "Ingredient 2:";
+            });
+            
+            option2.addEventListener("change", function() {
+                // If "Search by Dish" is selected, update the form labels
+                ingredient1Label.textContent = "Dish:";
+                ingredient2Label.textContent = "Additional Detail (Optional):";
+            });
+        });
+    </script>
+</body>
+</html>
